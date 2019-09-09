@@ -1,0 +1,26 @@
+.mortgage-main{
+margin-top: 3%;
+}
+mat-card{
+    margin-top: 2%;    
+    min-width: 50%;
+}
+.mortgage-main form {
+    min-width: 50%;
+}
+.mortgage-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}  
+.mortgage-radio-button {
+    margin: 5px;
+}
+mat-card-header .mat-card-header-text {
+    margin-left:0px;
+}
+.question-container {
+    margin-top:10px !important;
+}
+
+  

@@ -1,0 +1,101 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="mortgage-main">
+        <!--<div><h1>Mortgage Form</h1></div>-->
+        
+        <!--<mat-card-header>
+          <mat-card-title>Mortgage Form</mat-card-title>
+        </mat-card-header>-->
+        <form [formGroup]="mortgageForm" novalidate>
+            <mat-card>
+              <mat-card-header>
+                    <mat-card-title>Questions</mat-card-title>
+              </mat-card-header>
+              <mat-card-content fxLayout="column">
+                <div class="question-container">
+                    <label id="buyer-radio-group-label">Are you a first time buyer? </label>
+                    <mat-radio-group
+                      aria-labelledby="buyer-radio-group-label"
+                      class="mortgage-radio-group" formControlName="isFirstTimeBuyer">
+                      <mat-radio-button class="mortgage-radio-button" *ngFor="let option of options" [value]="option">
+                          {{option}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="question-container">
+                    <label id="primary-radio-group-label">Will this be your primary residence? </label>
+                    <mat-radio-group
+                      aria-labelledby="primary-radio-group-label"
+                      class="mortgage-radio-group" formControlName="isItPrimaryResidency">
+                      <mat-radio-button class="mortgage-radio-button" *ngFor="let option of options" [value]="option">
+                          {{option}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>             
+              </mat-card-content>
+              </mat-card>
+              <mat-card>
+                  <mat-card-header>
+                        <mat-card-title>Employment Details</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content fxLayout="column">
+                        <mat-form-field>
+                          <input matInput placeholder="Employer Name" formControlName="employerName" >
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input matInput placeholder="Job Title" formControlName="jobTitle" >
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input matInput placeholder="Years Of Service" formControlName="yearsOfService" >
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input matInput placeholder="Salary" formControlName="salary" >
+                        </mat-form-field>   
+                  </mat-card-content>
+            </mat-card>
+            <mat-card>
+              <mat-card-header>
+                    <mat-card-title>Property Details</mat-card-title>
+              </mat-card-header>
+              <mat-card-content fxLayout="column">
+                    <mat-form-field>
+                      <input matInput placeholder="Address Line 1" formControlName="addressLine1" >
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Address Line 2" formControlName="addressLine2" >
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="City" formControlName="city" >
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Province" formControlName="province" >
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input  matInput placeholder="Country" formControlName="country">
+                    </mat-form-field>    
+              </mat-card-content>
+              </mat-card>
+              <mat-card>
+                  <mat-card-header>
+                        <mat-card-title>Mortgage Details</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content fxLayout="column">
+                        <mat-form-field>
+                          <input matInput placeholder="Purchase Price" formControlName="purchasePrice" >
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input matInput placeholder="Down Payment" formControlName="downPayment" >
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input matInput placeholder="Mortgage Amount" formControlName="mortgageAmount" >
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input matInput placeholder="Closing Date" formControlName="closingDate" >
+                        </mat-form-field>  
+                  </mat-card-content>
+                  </mat-card>
+            <mat-card-actions align="end">
+              <button mat-raised-button color="primary" type="submit" (click)="goToSubmitForm()" [disabled]="mortgageForm.pristine || mortgageForm.invalid">Submit</button>
+              <button mat-raised-button color="primary" (click)="goToCancel()">Cancel</button>
+            </mat-card-actions>
+        </form>
+        
+        </div>
